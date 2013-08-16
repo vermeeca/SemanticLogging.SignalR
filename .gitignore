@@ -33,6 +33,7 @@ obj/
 [Rr]elease*/
 Ankh.NoLoad
 packages/
+*Nuget.exe
 
 #Tooling
 _ReSharper*/
