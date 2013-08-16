@@ -1,0 +1,11 @@
+﻿@model SampleWebApp.Models.NameInputModel
+
+<h1>Sample</h1>
+
+@using(var form = Html.BeginForm("SayHello"))
+{
+    @Html.TextBoxFor(m=>m.Name)
+    <input type="submit"/>
+
+}
+
