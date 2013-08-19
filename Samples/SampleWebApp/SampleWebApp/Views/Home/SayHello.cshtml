@@ -6,6 +6,11 @@
 {
     @Html.TextBoxFor(m=>m.Name)
     <input type="submit"/>
+    
+    if (Model != null && !string.IsNullOrEmpty(Model.Name))
+    {
+         <h2>Hello, @Model.Name</h2>
+    }
 
 }
 
