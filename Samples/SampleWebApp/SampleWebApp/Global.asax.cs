@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using SampleWebApp.EventSources;
+using SemanticLogging.SignalR;
 
 namespace SampleWebApp
 {
@@ -15,16 +17,21 @@ namespace SampleWebApp
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        private EventListener listener;
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            listener = SignalRLog.CreateListener();
+            listener.EnableEvents(SampleWebAppEventSource.Log, EventLevel.Verbose);
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            ApplicationEventSource.Log.ApplicationStart();
+            SampleWebAppEventSource.Log.ApplicationStart();
         }
     }
 }

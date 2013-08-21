@@ -21,7 +21,7 @@ namespace SampleWebApp.Controllers
         [HttpPost]
         public ActionResult SayHello(NameInputModel id)
         {
-            HomeControllerEventSource.Log.SayHello(id != null ? id.Name : string.Empty);
+            SampleWebAppEventSource.Log.SayHello(id != null ? id.Name : string.Empty);
             return View(id);
         }
 

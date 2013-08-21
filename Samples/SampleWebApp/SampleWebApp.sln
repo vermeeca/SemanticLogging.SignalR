@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{764E5A
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticLogging.SignalR", "..\..\src\SemanticLogging.SignalR\SemanticLogging.SignalR.csproj", "{25CAAB7D-EA05-4545-B4ED-8BF401143FBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{D53439F0-783A-424D-A9B8-A552FA9CA9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D53439F0-783A-424D-A9B8-A552FA9CA9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D53439F0-783A-424D-A9B8-A552FA9CA9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25CAAB7D-EA05-4545-B4ED-8BF401143FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25CAAB7D-EA05-4545-B4ED-8BF401143FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25CAAB7D-EA05-4545-B4ED-8BF401143FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25CAAB7D-EA05-4545-B4ED-8BF401143FBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
