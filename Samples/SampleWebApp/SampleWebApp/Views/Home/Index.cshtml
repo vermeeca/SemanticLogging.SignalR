@@ -9,7 +9,30 @@
         @Html.TextBox("Name")
         <input type="submit" value="Submit"/>
     </p>
-    <span id="name"></span>
+    <div>
+        <span id="name"></span>
+    </div>
+    
 }
 
+<div id="logging"></div>
 
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $.connection.hub.url = 'http://localhost:12345/signalr';
+            var loggingHub = $.connection.semanticLoggingHub;
+            loggingHub.client.messageLogged = function (value) {
+                console.log(value);
+                $("#logging").append("<span>" + value + "</span><br/>");
+            };
+
+            $.connection.hub.start();
+
+        })
+    </script>
+    @Scripts.Render("~/bundles/signalr")
+    <script src="http://localhost:12345/signalr/hubs"></script>
+}

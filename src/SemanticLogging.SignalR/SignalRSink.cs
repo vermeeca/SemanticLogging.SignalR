@@ -28,13 +28,14 @@ namespace SemanticLogging.SignalR
 
         public void OnNext(string value)
         {
-            clients.All.MessageLogged(value);
+            GlobalHost.ConnectionManager.GetHubContext<SemanticLoggingHub>().Clients.All.messageLogged(value);
+            clients.All.messageLogged(value);
             System.Diagnostics.Debug.WriteLine(value);
         }
 
         public void OnError(Exception error)
         {
-            clients.All.ErrorOccurred(error);
+            clients.All.errorOccurred(error);
             System.Diagnostics.Debug.WriteLine(error);
         }
 
