@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4AC13CE8-75C1-4527-A082-3A79F5FA427B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticLogging.SignalR", "src\SemanticLogging.SignalR\SemanticLogging.SignalR.csproj", "{25CAAB7D-EA05-4545-B4ED-8BF401143FBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApp", "Samples\SampleWebApp\SampleWebApp\SampleWebApp.csproj", "{D53439F0-783A-424D-A9B8-A552FA9CA9FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25CAAB7D-EA05-4545-B4ED-8BF401143FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25CAAB7D-EA05-4545-B4ED-8BF401143FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25CAAB7D-EA05-4545-B4ED-8BF401143FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25CAAB7D-EA05-4545-B4ED-8BF401143FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D53439F0-783A-424D-A9B8-A552FA9CA9FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53439F0-783A-424D-A9B8-A552FA9CA9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53439F0-783A-424D-A9B8-A552FA9CA9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53439F0-783A-424D-A9B8-A552FA9CA9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
