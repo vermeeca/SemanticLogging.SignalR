@@ -1,0 +1,15 @@
+﻿@model SampleWebApp.Models.NameInputModel
+
+<h1>Sample</h1>
+
+
+@using (var form = Ajax.BeginForm("SayHello", new AjaxOptions {UpdateTargetId = "name"}))
+{
+    <p>
+        @Html.TextBox("Name")
+        <input type="submit" value="Submit"/>
+    </p>
+    <span id="name"></span>
+}
+
+

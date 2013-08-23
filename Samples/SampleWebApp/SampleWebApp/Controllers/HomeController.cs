@@ -15,19 +15,16 @@ namespace SampleWebApp.Controllers
 
         public ActionResult Index()
         {
-            return RedirectToAction("SayHello", new NameInputModel());
-        }
-
-        [HttpPost]
-        public ActionResult SayHello(NameInputModel id)
-        {
-            SampleWebAppEventSource.Log.SayHello(id != null ? id.Name : string.Empty);
-            return View(id);
-        }
-
-        public ActionResult SayHello()
-        {
             return View();
         }
+
+        
+        public string SayHello(NameInputModel id)
+        {
+            SampleWebAppEventSource.Log.SayHello(id != null ? id.Name : string.Empty);
+            return id.Name;
+        }
+
+        
     }
 }
