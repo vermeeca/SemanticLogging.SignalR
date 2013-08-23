@@ -15,10 +15,6 @@ namespace SemanticLogging.SignalR
         private IDisposable host;
         private IHubConnectionContext clients;
 
-        public SignalRSink()
-        {
-            
-        }
 
         internal void StartHost()
         {
@@ -28,15 +24,12 @@ namespace SemanticLogging.SignalR
 
         public void OnNext(string value)
         {
-            GlobalHost.ConnectionManager.GetHubContext<SemanticLoggingHub>().Clients.All.messageLogged(value);
             clients.All.messageLogged(value);
-            System.Diagnostics.Debug.WriteLine(value);
         }
 
         public void OnError(Exception error)
         {
             clients.All.errorOccurred(error);
-            System.Diagnostics.Debug.WriteLine(error);
         }
 
         public void OnCompleted()
