@@ -22,7 +22,7 @@
 {
     <script>
         $(document).ready(function() {
-            $.connection.hub.url = 'http://localhost:12345/signalr';
+            $.connection.hub.url = '/semanticlogging/signalr';
             var loggingHub = $.connection.semanticLoggingHub;
             loggingHub.client.messageLogged = function (value) {
                 console.log(value);
@@ -34,5 +34,5 @@
         })
     </script>
     @Scripts.Render("~/bundles/signalr")
-    <script src="http://localhost:12345/signalr/hubs"></script>
+    <script src="semanticlogging/signalr/hubs"></script>
 }

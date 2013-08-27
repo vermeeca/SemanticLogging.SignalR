@@ -30,7 +30,7 @@ namespace SemanticLogging.SignalR
 
         private static void EnsureHostConfigured(SignalRSink sink)
         {
-            sink.StartHost();
+            sink.Startup();
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace SemanticLogging.SignalR
         /// <returns>
         /// An event listener that uses <see cref="T:SemanticLogging.SignalR.SignalRSink"/> to display events.
         /// </returns>
-        public static EventListener CreateListener(IEventTextFormatter formatter = null)
+        public static EventListener CreateListener(IEventTextFormatter formatter = null )
         {
             ObservableEventListener observableEventListener = new ObservableEventListener();
             LogToSignalR((IObservable<EventEntry>)observableEventListener, formatter);

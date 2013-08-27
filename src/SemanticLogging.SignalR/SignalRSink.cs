@@ -1,26 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
-using Microsoft.Owin.Hosting;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
 
 namespace SemanticLogging.SignalR
 {
     public class SignalRSink : IObserver<string>
     {
-        private IDisposable host;
         private IHubConnectionContext clients;
+        private object host;
+
+        public ISignalRHost Host { get; set; }
 
 
-        internal void StartHost()
+        public SignalRSink(ISignalRHost host = null)
         {
-            this.host = WebApp.Start<Startup>(@"http://localhost:12345");
+            this.Host = host ?? new MvcSignalRHost();
+        }
+
+        public void Startup()
+        {
+            this.Host.Start();
             this.clients = GlobalHost.ConnectionManager.GetHubContext<SemanticLoggingHub>().Clients;
         }
+
+
 
         public void OnNext(string value)
         {
@@ -34,11 +41,7 @@ namespace SemanticLogging.SignalR
 
         public void OnCompleted()
         {
-            System.Diagnostics.Debug.WriteLine("Completed");
-            if (host != null)
-            {
-                host.Dispose();
-            }
+            this.Host.ShutDown();
         }
     }
 }

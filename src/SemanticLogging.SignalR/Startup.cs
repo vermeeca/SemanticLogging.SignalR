@@ -9,7 +9,6 @@ namespace SemanticLogging.SignalR
         {
             // Turn cross domain on 
             var config = new HubConfiguration { EnableCrossDomain = true };
-            // This will map out to http://localhost:8080/signalr by default
             app.MapHubs(config);
         }
     }
