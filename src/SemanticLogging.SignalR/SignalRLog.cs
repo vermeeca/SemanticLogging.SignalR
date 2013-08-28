@@ -22,7 +22,7 @@ namespace SemanticLogging.SignalR
         public static SinkSubscription<SignalRSink> LogToSignalR(this IObservable<EventEntry> eventStream, IEventTextFormatter formatter = null)
         {
             var sink = new SignalRSink();
-            formatter = formatter ?? new JsonEventTextFormatter();
+            formatter = formatter ?? new EventTextFormatter();
 
             EnsureHostConfigured(sink);
 
@@ -47,14 +47,6 @@ namespace SemanticLogging.SignalR
             ObservableEventListener observableEventListener = new ObservableEventListener();
             LogToSignalR((IObservable<EventEntry>)observableEventListener, formatter);
             return (EventListener)observableEventListener;
-        }
-    }
-
-    public class PassThroughFormatter : IEventTextFormatter
-    {
-        public void WriteEvent(EventEntry eventEntry, TextWriter writer)
-        {
-            throw new NotImplementedException();
         }
     }
 

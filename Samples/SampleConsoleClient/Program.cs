@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Client;
 using Microsoft.AspNet.SignalR.Client.Hubs;
+using Newtonsoft.Json;
 
 namespace SampleConsoleClient
 {
@@ -15,6 +16,7 @@ namespace SampleConsoleClient
             try
             {
                 var connection = new Connection("http://slabsignalrdemo.azurewebsites.net/semanticLogging");
+                
 
                 connection.Received += data =>
                     {
