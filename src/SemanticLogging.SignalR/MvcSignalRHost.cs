@@ -21,8 +21,13 @@ namespace SemanticLogging.SignalR
         public void Start()
         {
             var innerResolver = GlobalHost.DependencyResolver;
-            routes.MapHubs("semanticlogging/signalr",
-                           new HubConfiguration {Resolver = new SemanticLoggingSinkResolver(innerResolver)});
+            routes.MapConnection<SemanticLoggingConnection>("semanticLogging", "/semanticLogging",
+                                                            new ConnectionConfiguration
+                                                                {
+                                                                    EnableCrossDomain = true,
+                                                                    Resolver =
+                                                                        new SemanticLoggingSinkResolver(innerResolver)
+                                                                });
         }
     }
 }

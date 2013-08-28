@@ -10,7 +10,7 @@ namespace SemanticLogging.SignalR
 {
     public class SignalRSink : IObserver<string>
     {
-        private IHubConnectionContext clients;
+        private IPersistentConnectionContext connection;
         private object host;
 
         public ISignalRHost Host { get; set; }
@@ -24,19 +24,19 @@ namespace SemanticLogging.SignalR
         public void Startup()
         {
             this.Host.Start();
-            this.clients = GlobalHost.ConnectionManager.GetHubContext<SemanticLoggingHub>().Clients;
+            this.connection = GlobalHost.ConnectionManager.GetConnectionContext<SemanticLoggingConnection>();
         }
 
 
 
         public void OnNext(string value)
         {
-            clients.All.messageLogged(value);
+            connection.Connection.Broadcast(value);
         }
 
         public void OnError(Exception error)
         {
-            clients.All.errorOccurred(error);
+            connection.Connection.Broadcast(error.ToString());
         }
 
         public void OnCompleted()

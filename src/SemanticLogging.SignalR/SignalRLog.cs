@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.Tracing;
+using System.IO;
 using System.Web;
 using System.Web.Hosting;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging;
@@ -48,4 +49,13 @@ namespace SemanticLogging.SignalR
             return (EventListener)observableEventListener;
         }
     }
+
+    public class PassThroughFormatter : IEventTextFormatter
+    {
+        public void WriteEvent(EventEntry eventEntry, TextWriter writer)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
 }

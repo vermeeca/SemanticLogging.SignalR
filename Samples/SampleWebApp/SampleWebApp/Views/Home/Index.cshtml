@@ -22,17 +22,16 @@
 {
     <script>
         $(document).ready(function() {
-            $.connection.hub.url = '/semanticlogging/signalr';
-            var loggingHub = $.connection.semanticLoggingHub;
-            loggingHub.client.messageLogged = function (value) {
+            var connection = $.connection('/semanticLogging');
+            
+            connection.received(function (value) {
                 console.log(value);
                 $("#logging").append("<span>" + value + "</span><br/>");
-            };
+            });
 
-            $.connection.hub.start();
+            connection.start();
 
         })
     </script>
     @Scripts.Render("~/bundles/signalr")
-    <script src="semanticlogging/signalr/hubs"></script>
 }

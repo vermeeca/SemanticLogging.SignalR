@@ -2,7 +2,7 @@
 
 namespace SemanticLogging.SignalR
 {
-    public class SemanticLoggingHub : Hub
+    public class SemanticLoggingConnection : PersistentConnection
     {
         
     }

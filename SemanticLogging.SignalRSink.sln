@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticLogging.SignalR", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApp", "Samples\SampleWebApp\SampleWebApp\SampleWebApp.csproj", "{D53439F0-783A-424D-A9B8-A552FA9CA9FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleConsoleClient", "Samples\SampleConsoleClient\SampleConsoleClient.csproj", "{7BBDE96D-554E-42FE-B59E-3AE53E39FDD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{D53439F0-783A-424D-A9B8-A552FA9CA9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D53439F0-783A-424D-A9B8-A552FA9CA9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D53439F0-783A-424D-A9B8-A552FA9CA9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BBDE96D-554E-42FE-B59E-3AE53E39FDD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBDE96D-554E-42FE-B59E-3AE53E39FDD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BBDE96D-554E-42FE-B59E-3AE53E39FDD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BBDE96D-554E-42FE-B59E-3AE53E39FDD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
